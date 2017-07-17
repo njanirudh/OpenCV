@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread("C:/Users/ANIRUDH/Downloads/pipes.jpg",cv2.IMREAD_UNCHANGED)
+img = cv2.imread("Images/pipes.jpg",cv2.IMREAD_UNCHANGED)
 
 #prints width,height,channels
 print (img.shape)
