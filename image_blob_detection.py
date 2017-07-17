@@ -1,6 +1,11 @@
 import cv2
 import numpy as np
+
+import matplotlib
+matplotlib.use('TkAgg')
+
 import matplotlib.pyplot as plt
+
 
 
 def colorSegmentation(lower_bound, upper_bound, image):
@@ -25,5 +30,7 @@ if __name__ == "__main__":
     image_path = 'Images/color_wheel.jpg'
     bgr_img = cv2.imread(image_path)
 
-    segmented_image = colorSegmentation([0, 100, 100], [10, 255, 255], bgr_img)
+    hsv_frame = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2HSV)
+    segmented_image = colorSegmentation([0, 100, 100], [10, 255, 255], hsv_frame)
+
     viewImage(segmented_image)
