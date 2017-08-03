@@ -8,7 +8,6 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
-
 def cannyEdgeDetection(image, min_val , max_val , aperture_size = 3):
 
     edges = cv2.Canny(image, min_val, max_val , aperture_size)

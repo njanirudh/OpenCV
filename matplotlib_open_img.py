@@ -3,7 +3,7 @@
 import cv2
 import matplotlib.pyplot as plt
 
-image_path = '/Users/anirudhnj/Documents/Images/TimberMatch/image_corpus/in_images/F218.jpg'
+image_path = 'Images/h_pipes_1.jpg'
 
 bgr_img = cv2.imread(image_path)
 gray_img = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2GRAY)
