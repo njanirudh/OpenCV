@@ -23,6 +23,11 @@ def thresholdimage(image):
 
     return image
 
+def sobleFilter(image):
+    gx = cv2.Sobel(image, cv2.CV_32F, 1, 0, ksize=1)
+    gy = cv2.Sobel(image, cv2.CV_32F, 0, 1, ksize=1)
+
+    return gx,gy
 
 def cannyEdgeDetection(image, min_val=10, max_val=100, aperture_size=3):
     edges = cv2.Canny(image, min_val, max_val, aperture_size)
@@ -88,20 +93,15 @@ def findContours(image):
 
 
 def lineDetect(image):
-    # cnvt = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    lines = cv2.HoughLines(image, 1, np.pi / 180, 200)
-    for rho, theta in lines[0]:
-        a = np.cos(theta)
-        b = np.sin(theta)
-        x0 = a * rho
-        y0 = b * rho
-        x1 = int(x0 + 1000 * (-b))
-        y1 = int(y0 + 1000 * (a))
-        x2 = int(x0 - 1000 * (-b))
-        y2 = int(y0 - 1000 * (a))
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+    #lines = cv2.HoughLines(image, 1, np.pi / 180, 200)
+    lines = cv2.HoughLinesP(image, rho=1, theta=np.pi / 180, threshold=20, minLineLength=20, maxLineGap=300)
+    print(lines[0])
 
-        cv2.line(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
-        return image
+    for x1, y1, x2, y2 in lines[0]:
+        cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+
+
 
 
 if __name__ == "__main__":
@@ -117,26 +117,27 @@ if __name__ == "__main__":
     imgList.append(cleanedImage)
 
     cleanedImage = cleanImageNoise(cleanedImage, 1)
-    # imgList.append(cleanedImage)
+    #imgList.append(cleanedImage)
 
 
     processed_image = differenceOfGaussian(cleanedImage, (9, 9), (5, 5))
     imgList.append(processed_image)
 
+    processed_image = cv2.dilate(processed_image ,(5,5))
+    imgList.append(processed_image)
+
+    processed_image = cv2.erode(processed_image ,(5,5))
+    imgList.append(processed_image)
+
     # processed_image = cv2.dilate(processed_image ,(5,5))
     # imgList.append(processed_image)
 
-    # processed_image = cv2.erode(processed_image ,(5,5))
-    # imgList.append(processed_image)
+    #processed_image = cannyEdgeDetection(processed_image)
+    #imgList.append(processed_image)
 
-    # processed_image = cv2.dilate(processed_image ,(5,5))
-    # imgList.append(processed_image)
+    lineDetect(processed_image)
 
-    # processed_image = cannyEdgeDetection(processed_image)
-    # imgList.append(processed_image)
 
-    # processed_image = lineDetect(processed_image)
-    # imgList.append(processed_image)
 
 
     viewImageList(imgList)
