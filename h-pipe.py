@@ -8,6 +8,7 @@ import matplotlib
 matplotlib.use('TkAgg')
 
 import matplotlib.pyplot as plt
+from common_functions.multi_image_view import viewImageList
 
 
 def brg2rgb(bgr_img):
@@ -64,24 +65,6 @@ def cleanImageNoise(image, iterations):
 
     return image
 
-
-# Dynamic Image viewing in MatPlotLib
-def viewImageList(imgList):
-    rowNumber = int(math.ceil(imgList.__len__() / 2.0))
-    fig, ax = plt.subplots(nrows=rowNumber, ncols=2)
-
-    for i in range(0, imgList.__len__()):
-        try:
-            plt.subplot(rowNumber, 2, i + 1)
-            plt.imshow(imgList[i])
-            plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
-
-        except IndexError:
-            print('Index doesnt exist')
-
-    plt.show()
-
-
 def findContours(image):
     image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     # image = cv2.threshold(image, 100, 255, 0)
@@ -129,13 +112,7 @@ if __name__ == "__main__":
     processed_image = cv2.erode(processed_image ,(5,5))
     imgList.append(processed_image)
 
-    # processed_image = cv2.dilate(processed_image ,(5,5))
-    # imgList.append(processed_image)
-
-    #processed_image = cannyEdgeDetection(processed_image)
-    #imgList.append(processed_image)
 
     lineDetect(processed_image)
-
     viewImageList(imgList)
 
