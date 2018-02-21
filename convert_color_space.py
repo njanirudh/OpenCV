@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread("pipes.jpg",cv2.IMREAD_UNCHANGED)
+img = cv2.imread("Images/pipes.jpg",cv2.IMREAD_UNCHANGED)
 
 gray_frame = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 hsv_frame = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)

@@ -70,14 +70,14 @@ def viewImageList(imgList):
     rowNumber = int(math.ceil(imgList.__len__() / 2.0))
     fig, ax = plt.subplots(nrows=rowNumber, ncols=2)
 
-    for i in xrange(0, imgList.__len__()):
+    for i in range(0, imgList.__len__()):
         try:
             plt.subplot(rowNumber, 2, i + 1)
             plt.imshow(imgList[i])
             plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
 
         except IndexError:
-            print 'Index doesnt exist'
+            print('Index doesnt exist')
 
     plt.show()
 
@@ -136,9 +136,6 @@ if __name__ == "__main__":
     #imgList.append(processed_image)
 
     lineDetect(processed_image)
-
-
-
 
     viewImageList(imgList)
 

@@ -24,7 +24,7 @@ if __name__ == "__main__":
     image_path = 'Images/color_wheel.jpg'
     processed_image = cv2.imread(image_path)
 
-    processed_image = cv2.cvtColor(processed_image, cv2.COLOR_BGR2GRAY)
-    processed_image = cannyEdgeDetection(processed_image , 50, 250)
+    # Canny recommended a upper:lower ratio between 2:1 and 3:1. (OpenCV docs)
+    processed_image = cannyEdgeDetection(processed_image , 50, 150)
 
     viewImage(processed_image)

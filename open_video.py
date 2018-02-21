@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-#Put the video path here
+# Video path here
 cap = cv2.VideoCapture('vtest.avi')
 
 while(cap.isOpened()):

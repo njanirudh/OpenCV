@@ -14,8 +14,7 @@ def grab_frame(cap):
     # loop over the face detections
     for rect in rects:
         # determine the facial landmarks for the face region, then
-        # convert the facial landmark (x, y)-coordinates to a NumPy
-        # array
+        # convert the facial landmark (x, y)-coordinates to a NumPy array
         shape = predictor(frame, rect)
         shape = face_utils.shape_to_np(shape)
 

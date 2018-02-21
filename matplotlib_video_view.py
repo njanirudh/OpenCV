@@ -14,5 +14,5 @@ im1 = plt.imshow(grab_frame(cap1))
 def update(i):
     im1.set_data(grab_frame(cap1))
 
-ani = FuncAnimation(plt.gcf(), update, interval=25)
+video = FuncAnimation(plt.gcf(), update, interval=25)
 plt.show()

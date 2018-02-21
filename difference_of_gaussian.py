@@ -8,11 +8,14 @@ for i in range(0,1):
     img = cv2.medianBlur(img,3)
     img = cv2.bilateralFilter(img,9,75,75)
 
-blur5 = cv2.GaussianBlur(img, (9, 9), 0)
-blur3 = cv2.GaussianBlur(img, (1, 1), 0)
+# Performing two different Gaussian blurs on the image,
+# with a different blurring radius for each,
+# and subtracting them to yield the result.
+blur_high = cv2.GaussianBlur(img, (9, 9), 0)
+blur_low = cv2.GaussianBlur(img, (1, 1), 0)
 
-DoGim = blur5 - blur3
+DoG_img = blur_high - blur_low
 
-plt.imshow(DoGim)
+plt.imshow(DoG_img)
 plt.xticks([]), plt.yticks([])   # to hide tick values on X and Y axis
 plt.show()

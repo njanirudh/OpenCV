@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 img = cv2.imread('Images/surface.jpg',0)
 
-# Initiate STAR detector
+# Initiate ORB detector
 orb = cv2.ORB_create()
 
 # find the keypoints with ORB

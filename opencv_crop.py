@@ -3,7 +3,7 @@ from glob import glob
 from os import path
 
 def split_image(file_name):
-    print file_name
+    print(file_name)
     img = cv2.imread(file_name, cv2.IMREAD_UNCHANGED)
     image_width, image_height, image_channels = img.shape
     width_pieces = 2
@@ -12,9 +12,9 @@ def split_image(file_name):
     piece_height = image_height / height_pieces
     index = 0
     w_index = 0
-    for w_itr in xrange(0, image_width, piece_width):
+    for w_itr in range(0, image_width, piece_width):
         h_index = 0
-        for h_itr in xrange(0, image_height, piece_height):
+        for h_itr in range(0, image_height, piece_height):
             x1 = w_index * piece_width
             x2 = (w_index + 1) * piece_width
             y1 = h_index * piece_height
@@ -24,11 +24,11 @@ def split_image(file_name):
             suffix_i = "_" + str(index) + ".jpg"
             base_file_name = base_file_name.replace(".JPG", suffix_i)
             out_file_name = path.dirname(file_name) + "/split/" + base_file_name
-            print out_file_name
+            print(out_file_name)
             cv2.imwrite(out_file_name, piece_i)
             h_index += 1
             index += 1
         w_index += 1
 
-for file_name in glob('*.JPG'):
+for file_name in glob('Images/pipes.jpg'):
     split_image(file_name)

@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-img1 = cv2.imread('Images/surface.jpg',0)          # queryImage
+img1 = cv2.imread('Images/surface.jpg',0) # queryImage
 img2 = cv2.imread('Images/surface.jpg',0) # trainImage
 
 # Initiate SIFT detector
