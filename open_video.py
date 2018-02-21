@@ -1,17 +1,23 @@
 import numpy as np
 import cv2
 
-# Video path here
-cap = cv2.VideoCapture('vtest.avi')
 
-while(cap.isOpened()):
-    ret, frame = cap.read()
+if __name__ == "__main__":
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # Video path here
+    VIDEO_PATH = 'vtest.avi'
+    cap = cv2.VideoCapture('vtest.avi')
 
-    cv2.imshow('frame',gray)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    while(cap.isOpened()):
+        # Capture frame-by-frame
+        ret, frame = cap.read()
 
-cap.release()
-cv2.destroyAllWindows()
+        # Our operations on the frame come here
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+        cv2.imshow('frame',gray)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()

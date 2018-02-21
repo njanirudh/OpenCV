@@ -8,7 +8,7 @@ import matplotlib
 matplotlib.use('TkAgg')
 
 import matplotlib.pyplot as plt
-from common_functions.multi_image_view import viewImageList
+from commons.matplotlib_view import viewImageList
 
 
 def brg2rgb(bgr_img):

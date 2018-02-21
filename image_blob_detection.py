@@ -27,8 +27,8 @@ def viewImage(img):
 
 
 if __name__ == "__main__":
-    image_path = 'Images/color_wheel.jpg'
-    bgr_img = cv2.imread(image_path)
+    IMAGE_PATH = 'Images/color_wheel.jpg'
+    bgr_img = cv2.imread(IMAGE_PATH)
 
     hsv_frame = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2HSV)
     segmented_image = colorSegmentation([0, 100, 100], [10, 255, 255], hsv_frame)

@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
+
+from commons import matplotlib_view
 
 img = cv2.imread('Images/h_pipes_Big.jpg')
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -19,6 +20,4 @@ for rho,theta in lines[0]:
 
     cv2.line(img,(x1,y1),(x2,y2),(0,0,255),2)
 
-plt.imshow(edges)
-plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
-plt.show()
+    matplotlib_view.singleImageView(img)

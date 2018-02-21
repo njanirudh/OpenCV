@@ -1,18 +1,23 @@
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
+from commons import matplotlib_view
 
-img = cv2.imread('Images/surface.jpg',0)
+if __name__ == "__main__":
 
-# Initiate ORB detector
-orb = cv2.ORB_create()
+    IMAGE_PATH = 'Images/pipes.jpg'
+    img = cv2.imread(IMAGE_PATH,0)
 
-# find the keypoints with ORB
-kp = orb.detect(img,None)
+    # Initiate ORB detector
+    orb = cv2.ORB_create()
 
-# compute the descriptors with ORB
-kp, des = orb.compute(img, kp)
+    # find the keypoints with ORB
+    kp = orb.detect(img,None)
 
-# draw only keypoints location,not size and orientation
-img2 = cv2.drawKeypoints(img,kp,img)
-plt.imshow(img2),plt.show()
+    # compute the descriptors with ORB
+    kp, des = orb.compute(img, kp)
+
+    # draw only keypoints location,not size and orientation
+
+    out = np.zeros(shape=[720,960])
+    img2 = cv2.drawKeypoints(img,kp,out)
+    matplotlib_view.singleImageView(img2)

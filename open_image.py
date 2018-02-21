@@ -1,15 +1,20 @@
 import cv2
 
-img = cv2.imread("Images/pipes.jpg",cv2.IMREAD_UNCHANGED)
 
-#prints width,height,channels
-print (img.shape)
+if __name__ == "__main__":
 
-#print total pixels
-print (img.size)
+    IMAGE_PATH = 'Images/pipes.jpg'
 
-#Show the image in the window
-cv2.imshow("Image", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+    img = cv2.imread(IMAGE_PATH,cv2.IMREAD_UNCHANGED)
+
+    #prints width,height,channels
+    print (img.shape)
+
+    #print total pixels
+    print (img.size)
+
+    #Show the image in the window
+    cv2.imshow("Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 

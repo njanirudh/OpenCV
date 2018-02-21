@@ -24,5 +24,7 @@ def findCircle(circleImg):
 
 if __name__ == "__main__":
 
-    img = cv2.imread("Images/pipes.jpg", cv2.IMREAD_UNCHANGED)
+    IMAGE_PATH = "Images/pipes.jpg"
+
+    img = cv2.imread(IMAGE_PATH, cv2.IMREAD_UNCHANGED)
     findCircle(img)
