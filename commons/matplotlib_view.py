@@ -23,7 +23,7 @@ def viewImageList(imgList):
 
     plt.show()
 
-def singleImageView(input):
+def viewSingleImage(input):
     plt.imshow(input)
     plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
     plt.show()

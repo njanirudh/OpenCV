@@ -1,18 +1,11 @@
 # OpenCV
 This repository has small scripts showing the working of the various functions in OpenCV .
 
-## Dependencies
-* Python 3.x
-* Numpy
-* OpenCV 3.3+ 
-* OpenCV 3.3+ Contrib modules
-* Matplotlib
-
 ## Scripts
 ### Image Color-Space conversion (convert_color_space.py)
 
 * OpenCV has the functionality to change the color space of the image into the Gray, HSV , YUV ,YCrCb etc.
-Changing color spaces is  helpful specially when the Image processing logic uses some kind of color segmentation or blob detection. 
+Changing color spaces is helpful specially when the Image processing logic uses some kind of color segmentation or blob detection. 
 
 ### Difference of Gaussian (difference_of_gaussian.py)
 

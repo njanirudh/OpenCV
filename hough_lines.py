@@ -20,4 +20,4 @@ for rho,theta in lines[0]:
 
     cv2.line(img,(x1,y1),(x2,y2),(0,0,255),2)
 
-    matplotlib_view.singleImageView(img)
+    matplotlib_view.viewSingleImage(img)
