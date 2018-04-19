@@ -3,7 +3,7 @@ import numpy as np
 
 from commons import matplotlib_view
 
-img = cv2.imread('Images/h_pipes_Big.jpg')
+img = cv2.imread('Images/sudoku.png')
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 edges = cv2.Canny(gray,50,150,apertureSize = 3)
 
@@ -20,4 +20,4 @@ for rho,theta in lines[0]:
 
     cv2.line(img,(x1,y1),(x2,y2),(0,0,255),2)
 
-    matplotlib_view.viewSingleImage(img)
+matplotlib_view.viewSingleImage(img)

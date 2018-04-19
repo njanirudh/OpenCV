@@ -1,7 +1,6 @@
 import cv2
 import numpy
-import matplotlib.pyplot as plt
-
+from commons import matplotlib_view
 def DifferenceOfGaussian(input , kernal_high , kernal_low):
     # Performing two different Gaussian blurs on the image,
     # with a different blurring radius for each,
@@ -22,8 +21,14 @@ if __name__ == "__main__":
         img = cv2.medianBlur(img,3)
         img = cv2.bilateralFilter(img,9,75,75)
 
-    out_img = DifferenceOfGaussian(img, (9,9), (1,1))
+    out_img_9 = DifferenceOfGaussian(img, (9,9), (1,1))
+    out_img_5 = DifferenceOfGaussian(img, (5,5), (1,1))
+    out_img_3 = DifferenceOfGaussian(img, (3,3), (1,1))
 
-    plt.imshow(out_img)
-    plt.xticks([]), plt.yticks([])   # to hide tick values on X and Y axis
-    plt.show()
+    image_list = {}
+    image_list["Normal"] = img
+    image_list["Gaussian 9x9"] = out_img_9
+    image_list["Gaussian 5x5"] = out_img_5
+    image_list["Gaussian 3x3"] = out_img_3
+
+    matplotlib_view.view_image_list(image_list)
