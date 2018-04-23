@@ -92,14 +92,14 @@ class Preprocessor:
 if __name__ == "__main__":
 
     cap = cv2.VideoCapture("/home/predator-nj/Pictures/plate/images/2018-04-03-162404.webm")
-    circle_finder = CircleFinderApplication(100,150,200,250)
+    circle_finder = CircleFinderApplication(40,60,100,150)
 
     while cap.isOpened():
         _, img = cap.read()
         w = img.shape[1]
         h = img.shape[0]
 
-        #image = cv2.cvtColor(img,cv2.COLOR_RGB2BGR)
-        #image = cv2.resize(img, (0, 0), fx=0.50, fy=0.50)
+        image = cv2.cvtColor(img,cv2.COLOR_RGB2BGR)
+        image = cv2.resize(img, (0, 0), fx=0.50, fy=0.50)
 
-        circle_finder.process_image(img)
+        circle_finder.process_image(image)

@@ -9,9 +9,9 @@ import matplotlib.pyplot as plt
 
 # Dynamic Image viewing in MatPlotLib
 # Reads a dictionary of the format {"title" : <image mat>}
-def view_image_list(imgList):
+def view_image_list(imgList , title = ""):
     rowNumber = int(math.ceil(imgList.__len__() / 2.0))
-    fig, ax = plt.subplots(nrows=rowNumber, ncols=2)
+    plt.subplots(nrows=rowNumber, ncols=2)
 
     count = 0
     for key,val in imgList.items():
