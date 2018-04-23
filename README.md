@@ -2,6 +2,13 @@
 This repository has small scripts showing the working of the various functions in OpenCV .
 
 ## Scripts
+
+### Open an Image (open_image.py)
+
+### Video Capture (video_capture.py)
+
+### Kalman Filter on a moving point (kalman_filter.py)
+
 ### Image Color-Space conversion (convert_color_space.py)
 
 * OpenCV has the functionality to change the color space of the image into the Gray, HSV , YUV ,YCrCb etc.
@@ -13,7 +20,7 @@ Changing color spaces is helpful specially when the Image processing logic uses 
 
 * When using DoG method change the kernal size of the two gaussian blurs to check which gives the best edge for a given image.    
 
-### Circle Finder (circle_finder.py)
+### Circle Finder (circle_finder_application.py)
 
 * Circle finder makes use of the [Hough Circle Transform](https://en.wikipedia.org/wiki/Circle_Hough_Transform) algorithm to find circles in the images.
 
@@ -23,6 +30,6 @@ Changing color spaces is helpful specially when the Image processing logic uses 
 
 ### Contour Finder (contour_finder.py)
 
-### Edge Detection (edge_detection.py)
-
 ### Hessian of an Image (hessian_image.py)
+
+### Stereo Depth (stereo_depth.py)
