@@ -12,7 +12,6 @@ gy = cv2.Sobel(img, cv2.CV_32F, 0, 1, ksize=1)
 
 mag, angle = cv2.cartToPolar(gx, gy, angleInDegrees=True)
 
-
 plt.imshow(mag)
 
 plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
