@@ -3,7 +3,13 @@ This repository has small scripts showing the working of the various functions i
 
 ## Scripts
 
+### Image BGR to RGB (bgr2rgb.py)
+
+* OpenCV opens an image in the [BGR format](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/). So it is important to convert it into RGB format to make it compatible with other libraries.
+
 ### Open an Image (open_image.py)
+
+* This script shows how to open an image using OpenCV and find the various image dimensions and properties.
 
 ### Video Capture (video_capture.py)
 
@@ -27,6 +33,8 @@ Changing color spaces is helpful specially when the Image processing logic uses 
 * Set the parameters of minimum radius and maximum radius to find circle of different sizes.
 
 ### ORB feature extraction (orb_features.py)
+
+* ORB ([Oriented FAST and rotated BRIEF](https://en.wikipedia.org/wiki/Oriented_FAST_and_rotated_BRIEF))
 
 ### Contour Finder (contour_finder.py)
 
