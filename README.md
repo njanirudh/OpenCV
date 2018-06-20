@@ -1,3 +1,5 @@
+<img src="https://cdn-images-1.medium.com/max/428/1*5bSooyDhHPPSsarNzBQr1w.png" width="150">    
+
 # OpenCV
 This repository has small scripts showing the working of the various functions in OpenCV .
 
@@ -9,9 +11,11 @@ This repository has small scripts showing the working of the various functions i
 
 ### Open an Image (open_image.py)
 
-* This script shows how to open an image using OpenCV and find the various image dimensions and properties.
+* Script to open an image using OpenCV and find the various image dimensions and properties.
 
 ### Video Capture (video_capture.py)
+
+* Script to capture a video stream from the webcam and perform some image processing operation on it.
 
 ### Kalman Filter on a moving point (kalman_filter.py)
 
@@ -41,3 +45,5 @@ Changing color spaces is helpful specially when the Image processing logic uses 
 ### Hessian of an Image (hessian_image.py)
 
 ### Stereo Depth (stereo_depth.py)
+
+### Image Gradients using Sobel filters (image_gradient.py)
