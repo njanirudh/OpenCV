@@ -1,7 +1,7 @@
 <img src="https://cdn-images-1.medium.com/max/428/1*5bSooyDhHPPSsarNzBQr1w.png" width="150">    
 
 # OpenCV
-This repository has small scripts showing the working of the various functions in OpenCV .
+Test scripts showing the various functionalities in OpenCV .
 
 ## Scripts
 
