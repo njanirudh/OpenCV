@@ -7,7 +7,6 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
-
 def colorSegmentation(lower_bound, upper_bound, image):
     lower = np.array(lower_bound, dtype="uint8")
     upper = np.array(upper_bound, dtype="uint8")
@@ -27,10 +26,10 @@ def viewImage(img):
 
 
 if __name__ == "__main__":
-    IMAGE_PATH = 'Images/color_wheel.jpg'
+    IMAGE_PATH = '/home/anirudh/Pictures/Selection_024.png'
     bgr_img = cv2.imread(IMAGE_PATH)
 
     hsv_frame = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2HSV)
-    segmented_image = colorSegmentation([0, 100, 100], [10, 255, 255], hsv_frame)
+    segmented_image = colorSegmentation([10, 90, 30],[60, 190, 110], hsv_frame)
 
     viewImage(segmented_image)
